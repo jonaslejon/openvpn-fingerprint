@@ -22,8 +22,9 @@ Reference: Diwen Xue, Reethika Ramesh, Arham Jain, Michaelis Kallitsis,
            J. Alex Halderman, Jedidiah R. Crandall, and Roya Ensafi.
            "OpenVPN Is Open to VPN Fingerprinting." 
            Communications of the ACM, 2024.
-"""
 
+License: MIT
+"""
 import socket
 import time
 import struct
