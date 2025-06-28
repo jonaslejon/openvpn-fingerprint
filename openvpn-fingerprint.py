@@ -139,11 +139,12 @@ OPENVPN_PROFILES = [
 
 
 class OpenVPNFingerprinter:
-    def __init__(self, timeout: float = 5.0, verbose: bool = False, super_verbose: bool = False, json_output: bool = False):
+    def __init__(self, timeout: float = 5.0, verbose: bool = False, super_verbose: bool = False, json_output: bool = False, logging_enabled: bool = True):
         self.timeout = timeout
         self.verbose = verbose
         self.super_verbose = super_verbose
         self.json_output = json_output
+        self.logging_enabled = logging_enabled
         self.results = {}
         self.scan_metadata = {
             'tool_name': 'OpenVPN TCP/UDP Fingerprinting Tool',
@@ -157,6 +158,8 @@ class OpenVPNFingerprinter:
         
     def log(self, message: str, level: str = "DEBUG"):
         """Print verbose logging messages with emojis and colors."""
+        if not self.logging_enabled:
+            return
         if self.json_output:
             return  # Suppress all output in JSON mode except final JSON
             
@@ -212,6 +215,8 @@ class OpenVPNFingerprinter:
     
     def log_packet(self, direction: str, data: bytes, protocol: str = "TCP"):
         """Log packet data in super verbose mode."""
+        if not self.logging_enabled:
+            return
         if self.json_output or not self.super_verbose:
             return
             
@@ -1593,10 +1598,10 @@ class OpenVPNFingerprinter:
 def print_banner():
     """Print colorful banner with emojis."""
     if COLORAMA_AVAILABLE:
-        banner = f"""
+        banner = fr"""
 {Fore.CYAN}{Style.BRIGHT}
                                     __ _                            _     _
- ___ _ __  ___ _ ___ ___ __ _ _    / _(_)_ _  __ _ ___ _ _ _ __ _ _(_)_ _| |_
+ ___ _ __  ___ _ ___ ___ __ _ _    / _(_)_ _  __ _ ___ _ _ _ __ _ _(_)_ _| |_ 
 / _ \ '_ \/ -_) ' \ V / '_ \ ' \  |  _| | ' \/ _` / -_) '_| '_ \ '_| | ' \  _|
 \___/ .__/\___|_||_\_/| .__/_||_| |_| |_|_||_\__, \___|_| | .__/_| |_|_||_\__|
     |_|               |_|                    |___/        |_|
@@ -1606,10 +1611,10 @@ def print_banner():
 {Fore.BLUE}🔗 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/ 🔗{Style.RESET_ALL}
 {Fore.BLUE}🔗 GitHub: https://github.com/jonaslejon/openvpn-fingerprint 🔗{Style.RESET_ALL}
 {Fore.MAGENTA}✨ Enhanced with adaptive algorithms and behavioral profiling ✨{Style.RESET_ALL}
-{Fore.RED}⚠️ For educational and research purposes only! ⚠️{Style.RESET_ALL}
+{Fore.RED}⚠️ For educational and research purposes only! ���️{Style.RESET_ALL}
 {Style.RESET_ALL}"""
     else:
-        banner = """
+        banner = r"""
 OpenVPN Fingerprinting Tool v2.4.2
 Based on: "OpenVPN Is Open to VPN Fingerprinting" (ACM CACM 2024)
 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/
@@ -1624,7 +1629,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="OpenVPN TCP/UDP Fingerprinting Tool",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=f"""
+        epilog=r"""
 {Fore.CYAN if COLORAMA_AVAILABLE else ''}Examples:{Style.RESET_ALL if COLORAMA_AVAILABLE else ''}
   python3 openvpn-fingerprint.py -t 1.2.3.4
   python3 openvpn-fingerprint.py -t 1.2.3.4 -p 443 --protocol tcp
