@@ -3,6 +3,7 @@
 OpenVPN TCP/UDP Fingerprinting Tool (Enhanced Version)
 Based on research: "OpenVPN Is Open to VPN Fingerprinting" (ACM CACM 2024)
 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/
+GitHub: https://github.com/jonaslejon/openvpn-fingerprint
 
 This enhanced version includes:
 - Adaptive confidence thresholds
@@ -1602,6 +1603,7 @@ def print_banner():
 {Fore.YELLOW}🔍 OpenVPN Fingerprinting Tool v2.4.2 🔍{Style.RESET_ALL}
 {Fore.GREEN}📡 Based on: "OpenVPN Is Open to VPN Fingerprinting" (ACM CACM 2024) 📡{Style.RESET_ALL}
 {Fore.BLUE}🔗 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/ 🔗{Style.RESET_ALL}
+{Fore.BLUE}🔗 GitHub: https://github.com/jonaslejon/openvpn-fingerprint 🔗{Style.RESET_ALL}
 {Fore.MAGENTA}✨ Enhanced with adaptive algorithms and behavioral profiling ✨{Style.RESET_ALL}
 {Fore.RED}⚠️ For educational and research purposes only! ⚠️{Style.RESET_ALL}
 {Style.RESET_ALL}"""
@@ -1610,6 +1612,7 @@ def print_banner():
 OpenVPN Fingerprinting Tool v2.4.2
 Based on: "OpenVPN Is Open to VPN Fingerprinting" (ACM CACM 2024)
 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/
+GitHub: https://github.com/jonaslejon/openvpn-fingerprint
 Enhanced with adaptive algorithms and behavioral profiling
 For educational and research purposes only!
 """
