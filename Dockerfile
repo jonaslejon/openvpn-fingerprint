@@ -1,6 +1,10 @@
 # Use Alpine Linux for minimal footprint
 FROM python:3.12-alpine
 
+LABEL org.opencontainers.image.source=https://github.com/jonaslejon/openvpn-fingerprint/
+LABEL org.opencontainers.image.description="OpenVPN TCP/UDP Fingerprinting Tool (Enhanced Version)"
+LABEL org.opencontainers.image.licenses=MIT
+
 # Install security updates
 RUN apk update && apk upgrade --no-cache
 
