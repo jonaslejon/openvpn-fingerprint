@@ -10,6 +10,10 @@
 🔍 OpenVPN Fingerprinting Tool v2.4.2 🔍
 ```
 
+![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-active-success.svg)
+
 This repository contains an enhanced implementation of the OpenVPN TCP/UDP Fingerprinting Tool, based on the research paper ["OpenVPN Is Open to VPN Fingerprinting"](https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/) (ACM CACM 2024).
 
 The tool analyzes the responses of a server to a series of specially crafted probes to determine if it is running OpenVPN. It includes advanced techniques for higher accuracy and more detailed analysis.
