@@ -1,3 +1,2 @@
-# OpenVPN Fingerprinting Tool Requirements
-colorama==0.4.6
-pytest==8.3.2
+colorama
+pytest
