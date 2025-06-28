@@ -87,7 +87,7 @@ First download some data from Shodan using the Shodan CLI:
 ```bash
 shodan download openvpn.csv port:1194
 ```
-
+Then run the tests:
 ```bash
 # Run a test with a Shodan JSON file and save results to the 'results/' directory
 python3 efficieny-test.py -f openvpn.json.gz -o results/
