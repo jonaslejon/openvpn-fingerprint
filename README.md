@@ -7,7 +7,7 @@
 \___/ .__/\___|_||_\_/| .__/_||_| |_| |_|_||_\__, \___|_| | .__/_| |_|_||_\__|
     |_|               |_|                    |___/        |_|
                                                                 
-🔍 OpenVPN Fingerprinting Tool v2.4.2 🔍
+🔍 OpenVPN Fingerprinting Tool v2.4.3 🔍
 ```
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)

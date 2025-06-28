@@ -148,7 +148,7 @@ class OpenVPNFingerprinter:
         self.results = {}
         self.scan_metadata = {
             'tool_name': 'OpenVPN TCP/UDP Fingerprinting Tool',
-            'version': '2.4.2',  # Keep consistent with banner,
+            'version': '2.4.3',  # Keep consistent with banner,
             'scan_timestamp': time.time(),
             'scan_time_iso': time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         }
@@ -1606,16 +1606,16 @@ def print_banner():
 \___/ .__/\___|_||_\_/| .__/_||_| |_| |_|_||_\__, \___|_| | .__/_| |_|_||_\__|
     |_|               |_|                    |___/        |_|
                                                                 
-{Fore.YELLOW}🔍 OpenVPN Fingerprinting Tool v2.4.2 🔍{Style.RESET_ALL}
+{Fore.YELLOW}🔍 OpenVPN Fingerprinting Tool v2.4.3 🔍{Style.RESET_ALL}
 {Fore.GREEN}📡 Based on: "OpenVPN Is Open to VPN Fingerprinting" (ACM CACM 2024) 📡{Style.RESET_ALL}
 {Fore.BLUE}🔗 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/ 🔗{Style.RESET_ALL}
 {Fore.BLUE}🔗 GitHub: https://github.com/jonaslejon/openvpn-fingerprint 🔗{Style.RESET_ALL}
 {Fore.MAGENTA}✨ Enhanced with adaptive algorithms and behavioral profiling ✨{Style.RESET_ALL}
-{Fore.RED}⚠️ For educational and research purposes only! ���️{Style.RESET_ALL}
+{Fore.RED}⚠️ For educational and research purposes only! ⚠️{Style.RESET_ALL}
 {Style.RESET_ALL}"""
     else:
         banner = r"""
-OpenVPN Fingerprinting Tool v2.4.2
+OpenVPN Fingerprinting Tool v2.4.3
 Based on: "OpenVPN Is Open to VPN Fingerprinting" (ACM CACM 2024)
 Source: https://cacm.acm.org/research/openvpn-is-open-to-vpn-fingerprinting/
 GitHub: https://github.com/jonaslejon/openvpn-fingerprint
@@ -1629,7 +1629,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="OpenVPN TCP/UDP Fingerprinting Tool",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=r"""
+        epilog=f"""
 {Fore.CYAN if COLORAMA_AVAILABLE else ''}Examples:{Style.RESET_ALL if COLORAMA_AVAILABLE else ''}
   python3 openvpn-fingerprint.py -t 1.2.3.4
   python3 openvpn-fingerprint.py -t 1.2.3.4 -p 443 --protocol tcp
@@ -1647,7 +1647,7 @@ def main():
   {Fore.CYAN if COLORAMA_AVAILABLE else ''}-vv{Style.RESET_ALL if COLORAMA_AVAILABLE else ''}  : Show detailed packet analysis and timing
   {Fore.CYAN if COLORAMA_AVAILABLE else ''}--json{Style.RESET_ALL if COLORAMA_AVAILABLE else ''}: Output results in JSON format
 """
-    )
+)
     
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('-t', '--target', help='🎯 Single target host')
