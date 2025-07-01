@@ -72,7 +72,7 @@ The tool is available as a Docker image: `jonaslejon/openvpn-fingerprint`.
 
 ```bash
 # Scan a single target
-docker run --rm jonaslejon/openvpn-fingerprint -t 1.2.3.4
+docker run -it --rm jonaslejon/openvpn-fingerprint -t 1.2.3.4
 ```
 
 ## Efficiency Testing
